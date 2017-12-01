@@ -1,5 +1,5 @@
 <div class="wrapper" #map>
-  <agm-map [zoom]="14" [latitude]="lat" [longitude]="lng" [style.height.px]="map.offsetHeight">
+  <agm-map [zoom]="16" [latitude]="lat" [longitude]="lng" [style.height.px]="map.offsetHeight">
     <agm-marker *ngIf="isBluePointVisible" [iconUrl]="bluePoint" [latitude]="lat" [longitude]="lng"></agm-marker>
     <agm-marker *ngFor="let station of stations" [iconUrl]="station | iconUrl" [latitude]="station.position.lat" [longitude]="station.position.lng">
       <agm-snazzy-info-window [closeWhenOthersOpen]="true" [isOpen]="station.number==closestStation.number">

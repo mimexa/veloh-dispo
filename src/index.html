@@ -3,22 +3,27 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Vélos publics disponibles aux Luxembourg</title>
+  <title>Carte des stations et disponibilités des vélos publics</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <meta name="description" content="Disponibilité des stations des vélos publics (veloh) au Luxembourg">
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109614310-2"></script>
+  <meta name="description" content="Carte des stations et disponibilités des vélos publics (veloh) au Luxembourg">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-110351283-1"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
-    gtag('config', 'UA-109614310-2');
+
+    gtag('config', 'UA-110351283-1');
   </script>
 
 </head>
 
 <body>
+  <div itemscope itemtype="http://schema.org/Service" style="display: none">
+    <span itemprop="name">Carte des stations</span> et disponibilités des <span itemprop="offers">vélos publics (veloh)</span>
+  </div>
+  <meta itemprop="providerMobility" content="dynamic" />
   <app-root>
     <div style="height: 100%; width: 100%; text-align: center; padding-top: 15%">
       <img src="assets/loader.gif" style="width: 150px; height: 150px" />

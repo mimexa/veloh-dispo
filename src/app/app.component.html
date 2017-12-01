@@ -2,12 +2,13 @@
   <agm-map [zoom]="14" [latitude]="lat" [longitude]="lng" [style.height.px]="map.offsetHeight">
     <agm-marker *ngIf="isBluePointVisible" [iconUrl]="bluePoint" [latitude]="lat" [longitude]="lng"></agm-marker>
     <agm-marker *ngFor="let station of stations" [iconUrl]="station | iconUrl" [latitude]="station.position.lat" [longitude]="station.position.lng">
-      <agm-snazzy-info-window [closeWhenOthersOpen]="true">
+      <agm-snazzy-info-window [closeWhenOthersOpen]="true" [isOpen]="station.number==closestStation.number">
         <ng-template>
           <app-line [label]="'Last update'" [value]="station.last_update | timeAgo"></app-line>
           <app-line [label]="'Available bikes'" [value]="station.available_bikes"></app-line>
           <app-line [label]="'Available bikes stands'" [value]="station.available_bike_stands"></app-line>
           <app-line [label]="'Address'" [value]="station.address | capitalizer"></app-line>
+          <app-line [label]="'Distance'" [value]="'%.0d metres' | stringFormat : station.distance"></app-line>
         </ng-template>
       </agm-snazzy-info-window>
     </agm-marker>

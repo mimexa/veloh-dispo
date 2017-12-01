@@ -25,10 +25,10 @@
     "@angular/router": "^4.2.4",
     "core-js": "^2.4.1",
     "ngx-restangular": "1.0.11",
+    "ngx-stringformat": "*",
     "rxjs": "5.4.2",
     "snazzy-info-window": "^1.1.0",
-    "zone.js": "^0.8.14",
-    "ngx-stringformat": "^1.0.1"
+    "zone.js": "^0.8.14"
   },
   "devDependencies": {
     "@angular/cli": "1.4.9",

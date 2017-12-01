@@ -9,6 +9,7 @@ import { CapitalizerPipe } from './pipes/capitalizer.pipe';
 import { IconUrlPipe } from './pipes/icon-url.pipe';
 import { TimeAgoPipe } from './pipes/time-ago.pipe';
 import { StringFormatModule } from 'ngx-stringformat';
+import { GoogleMapsAPIWrapper } from '@agm/core/services';
 // Function for setting the default restangular configuration
 // export function RestangularConfigFactory (RestangularProvider) {
 //   RestangularProvider.setBaseUrl('http://api.restngx.local/v1');
@@ -34,7 +35,7 @@ import { StringFormatModule } from 'ngx-stringformat';
     AgmSnazzyInfoWindowModule,
     StringFormatModule
   ],
-  providers: [],
+  providers: [GoogleMapsAPIWrapper],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

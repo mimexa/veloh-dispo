@@ -8,7 +8,7 @@
           <app-line [label]="'Available bikes'" [value]="station.available_bikes"></app-line>
           <app-line [label]="'Available bikes stands'" [value]="station.available_bike_stands"></app-line>
           <app-line [label]="'Address'" [value]="station.address | capitalizer"></app-line>
-          <app-line [label]="'Distance'" [value]="'%.0d metres' | stringFormat : station.distance"></app-line>
+          <app-line *ngIf="station.distance" [label]="'Distance'" [value]="'%.0d metres' | stringFormat : station.distance"></app-line>
         </ng-template>
       </agm-snazzy-info-window>
     </agm-marker>

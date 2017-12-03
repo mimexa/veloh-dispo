@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { AppComponent } from './app.component';
 import { AgmCoreModule } from '@agm/core';
 import { RestangularModule } from 'ngx-restangular';
@@ -10,13 +10,6 @@ import { IconUrlPipe } from './pipes/icon-url.pipe';
 import { TimeAgoPipe } from './pipes/time-ago.pipe';
 import { StringFormatModule } from 'ngx-stringformat';
 import { GoogleMapsAPIWrapper } from '@agm/core/services';
-// Function for setting the default restangular configuration
-// export function RestangularConfigFactory (RestangularProvider) {
-//   RestangularProvider.setBaseUrl('http://api.restngx.local/v1');
-//   RestangularProvider.setDefaultHeaders({'Authorization': 'Bearer UDXPx-Xko0w4BRKajozCVy20X11MRZs1'});
-// }
-
-// "../node_modules/snazzy-info-window/dist/snazzy-info-window.css"
 
 @NgModule({
   declarations: [
@@ -35,7 +28,11 @@ import { GoogleMapsAPIWrapper } from '@agm/core/services';
     AgmSnazzyInfoWindowModule,
     StringFormatModule
   ],
-  providers: [GoogleMapsAPIWrapper],
+  providers: [GoogleMapsAPIWrapper,
+    {
+      provide: LOCALE_ID,
+      useValue: 'fr-FR'
+    }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
